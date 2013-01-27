@@ -966,6 +966,10 @@ public final class Launcher extends Activity
         if (mSearchDropTargetBar != null) {
             mSearchDropTargetBar.setup(this, dragController);
         }
+        
+        if(Settings.System.getFloat(getContentResolver(), "navigation_bar_alpha", 1.0f) < 1) {
+        	mDragLayer.setBackground(null);
+        }
     }
 
     /**
